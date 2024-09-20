@@ -1,0 +1,182 @@
+.stock {
+    &__items {
+        
+    }
+
+    &__title-text {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        color: var(--Main-onSurface, #414141);
+        font-family: Rubik;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%; 
+    }
+
+    &__sub-title {
+        color: var(--Grayscale-Hardest, #606060);
+        font-family: Rubik;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        transition: 0.3s ease;
+        &:hover {
+            color: #acacac;
+        }
+    }
+
+    &__block-text {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__block-card {
+        padding: 40px 0 120px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__mini-card {
+        padding: 0px 8px 8px 8px;
+        margin-top: -5px;
+        background: var(--Main-Surface, #FFF);
+    }
+
+    &__card {
+        min-width: 272px;
+        min-height: 325px;
+        transition: 0.4s ease;
+        position: relative;
+        &:hover {
+            cursor: pointer;
+            box-shadow: 10px 5px 5px rgb(7, 1, 1);
+            outline: 0.5px solid #414141;
+        }
+        &::after {
+            content: '';
+            background: url(/assets/images/loverr.png) no-repeat;
+            background-color: #e9e9e9;
+            width: 26px;
+            height: 25px;   
+            display: flex;
+		    justify-content: center;
+		    align-items: center;     
+            border-radius: 5px;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        &::before {
+            content: '-50%';
+            color: aliceblue;
+            background-color: #c60;
+            width: 56px;
+            height: 32px;
+            position: absolute;
+            display: flex;
+		    justify-content: center;
+		    align-items: center;
+            border-radius: 5px;
+            top: 34%;
+            left: 5px;
+        }
+    }
+
+    &__block-number {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__word {
+        color: var(--Main-onSurface, #414141);
+        font-family: Rubik;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%;
+    }
+
+    &__gray-text {
+        color: var(--Grayscale-Light, #BFBFBF);
+        font-family: Rubik;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+    }
+
+    &__sub-word {
+        color: var(--Grayscale-Hardest, #606060);
+        font-family: Rubik;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+    }
+
+    &__text {
+        margin: 8px 0;
+        color: var(--Main-onSurface, #414141);
+        font-family: Rubik;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+    }
+
+    &__btnn {
+        margin-top: 8px;
+    }
+
+
+}
+
+.rating-area {
+	overflow: hidden;
+	width: 162px;
+}
+.rating-area:not(:checked) > input {
+	display: none;
+}
+.rating-area:not(:checked) > label {
+	float: right;
+	width: 32px;
+	padding: 0;
+	cursor: pointer;
+	font-size: 22px;
+	line-height: 22px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+.rating-area:not(:checked) > label:before {
+	content: '★';
+}
+.rating-area > input:checked ~ label {
+	color: rgba(255, 102, 51, 1);
+	text-shadow: 1px 1px #c60;
+}
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+	color: rgba(255, 102, 51, 1);
+}
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+	color: rgba(255, 102, 51, 1);
+	text-shadow: 1px 1px rgba(255, 102, 51, 1);
+}
+.rate-area > label:active {
+	position: relative;
+}
